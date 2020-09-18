@@ -16,4 +16,8 @@ lessonRouter.post('/', async (request, response) => {
   }
 });
 
+lessonRouter.get('/', async (request, response) => {
+  response.json(await getRepository(Lesson).find());
+});
+
 export default lessonRouter;

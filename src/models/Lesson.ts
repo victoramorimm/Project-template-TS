@@ -1,4 +1,6 @@
-import { Column, CreateDateColumn, Entity, PrimaryGeneratedColumn, UpdateDateColumn } from 'typeorm';
+import { Column, CreateDateColumn, Entity, ManyToOne, OneToOne, PrimaryGeneratedColumn, UpdateDateColumn } from 'typeorm';
+import Class from './Class';
+import Content from './Content';
 
 @Entity('lesson')
 export default class Lesson {
@@ -7,6 +9,12 @@ export default class Lesson {
 
   @Column()
   description: string;
+
+  @OneToOne(type => Content, lesson => Lesson )
+  content: Content;
+
+  @ManyToOne(type => Class, lessons => Lesson, {eager: true})
+  classe: Class
 
   @CreateDateColumn({ name: 'created_At' })
   createdAt: Date;
