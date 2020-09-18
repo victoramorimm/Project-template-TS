@@ -17,6 +17,6 @@ export default class Class {
     @CreateDateColumn({ name: 'created_At' })
     createdAt: Date;
 
-    @UpdateDateColumn({ name: 'update_At' })
-    updateAt: Date;
+    @UpdateDateColumn({ name: 'updated_At' })
+    updatedAt: Date;
 }

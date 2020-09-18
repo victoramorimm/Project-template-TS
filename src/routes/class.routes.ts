@@ -23,7 +23,7 @@ classRouter.get('/:name', async (request, response) => {
     const repository = getCustomRepository(ClassRepository);
 
     const res = repository.findByName(request.params.name);
-
+															
     response.json(res)
 });
 
