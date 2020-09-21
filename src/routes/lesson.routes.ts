@@ -7,7 +7,7 @@ const lessonRouter = Router();
 lessonRouter.post('/', async (request, response) => {
   try {
     const repo = getRepository(Lesson);
-    const res = repo.save(request.body);
+    const res = await repo.save(request.body);
     return response.status(201).json(res);
   
   } catch (error) {

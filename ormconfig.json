@@ -4,7 +4,7 @@
   "port": 5433,
   "username": "postgres",
   "password": "docker",
-  "database": "mussum2",
+  "database": "mussum3",
   "entities": [
     "src/models/**/*.ts"
  ],
